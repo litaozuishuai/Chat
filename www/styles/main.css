@@ -1,0 +1,453 @@
+@charset "UTF-8";
+html, body
+{
+    margin: 0;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+}
+body
+{
+    background:url(../content/amazing-sky.jpg) center center;
+    background-size:cover;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+.wrapper
+{
+    width: 500px;
+    min-width: 500px;
+    height: 640px;
+    padding: 5px;
+    margin: 0px auto;
+    background-color: #ddd;
+    opacity: 0.6;
+    position: relative;
+}
+/*.wrapper .tingting*/
+/*{*/
+    /*position: fixed;*/
+    /*top:50px;*/
+    /*left:50px;*/
+    /*width: 300px;*/
+    /*height: 350px;*/
+/*}*/
+
+/*--------------------------------------------------------------------*/
+#box
+{
+    width:300px;
+    height:350px;
+    background:#fff;
+    position: fixed;
+    overflow: hidden;
+    z-index:5000;
+    top: 50px;
+    left:50px;
+}
+#list
+{
+    position:absolute;
+    left:0;
+    top:0;
+    padding: 0;
+    margin: 0;
+}
+#list li
+{
+    width:300px;
+    height:350px;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 5px;
+}
+#list li img
+{
+    width: 300px;
+    height: 350px;
+}
+#num
+{
+    position: absolute;
+    right:10px;
+    bottom:10px;
+}
+#num li
+{
+    width:16px;
+    height:16px;
+    float:left;
+    margin-right:2px;
+    color:#fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-family:'Arial';
+    line-height:16px;
+    text-align: center;
+    border:1px solid #fff;
+    list-style: none;
+}
+.active
+{
+    background:#ff6600;
+}
+#box span
+{
+    display: block;
+    width:auto;
+    text-align:center;
+    color:red;
+    font-size: 14px;
+    font-family:'Arial';
+}
+#foot_bm a,p,p a
+{
+    font-size:12px;
+    color:#666;
+}
+
+/*----------------------------------------------------------*/
+
+#holder
+{
+    position: fixed;
+    width: 300px;
+    height: 350px;
+    line-height: 350px;
+    font-size: 25px;
+    text-indent: 1em;
+    right: 50px;
+    top:50px;
+    background: rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+#canvas
+{
+    position: absolute;
+    z-index: -20;
+    /*top:0;*/
+    /*left: 0;*/
+}
+#holder.hover
+{
+    border: 3px dashed #f00;
+}
+#holder.normal
+{
+    border:3px dashed #fff;
+}
+#loginWrapper
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(5, 5, 5, 1);
+    text-align: center;
+    color: #fff;
+    display: block;
+    top:50%;
+    transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    background:url(../content/amazing-sky.jpg) center center;
+    background-size:cover;
+}
+#nickWrapper
+{
+    display: none;
+    margin-top: 2%;
+}
+#nickWrapper h1
+{
+    font-size:54px;
+    letter-spacing: 20px;
+    margin-left: 13px;
+    display: inline-block;
+    padding-top:20px ;
+    padding-bottom: 20px;
+    border-top:5px solid #fff;
+    border-bottom: 5px solid #fff;
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: all 3s ;
+    transition: all 3s;
+ }
+#nickWrapper h1.show
+{
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+#nickWrapper p
+{
+    font-size:21px;
+    margin-bottom:40px;
+    margin-left:25px;
+    margin-right:25px;
+    letter-spacing: 8px;
+    opacity: 0;
+    color: white;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 3s .5s;
+    transition: all 3s .5s;
+}
+#nickWrapper p.show
+{
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+#loginBtn
+{
+    color: darkturquoise;
+    border: 1px solid darkturquoise;
+    border-radius: 3px;
+    font-size:18px;
+    padding:10px 100px;
+    text-decoration: none;
+    transition: all .5s;
+}
+#loginBtn:hover
+{
+    color: aqua;
+    background: deepskyblue;
+}
+.loader
+{
+    text-indent: -9999px;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    margin-top: 10%;
+    -webkit-animation:load-effect 1s infinite linear;
+    -o-animation:load-effect 1s infinite linear;
+    animation:load-effect 1s infinite linear;
+}
+@keyframes load-effect
+{
+    0%,100%
+    {
+        box-shadow: 0 -3em 0 .2em #fff,2em -2em 0 0 #fff,3em 0 0 -.5em #fff,2em 2em 0 -.5em #fff,0 3em 0 -.5em #fff,-2em 2em 0 -.5em #fff,-3em 0 0 -.5em #fff,-2em -2em 0 0 #fff ;
+    }
+    12.5%
+    {
+        box-shadow: 0 -3em 0 0 #fff,2em -2em 0 .2em #fff,3em 0 0 0 #fff,2em 2em 0 -.5em #fff,0 3em 0 -.5em #fff,-2em 2em 0 -.5em #fff,-3em 0 0 -.5em #fff,-2em -2em 0 -.5em #fff ;
+    }
+    25%
+    {
+        box-shadow: 0 -3em 0 -.5em #fff,2em -2em 0 0 #fff,3em 0 0 .2em #fff,2em 2em 0 0 #fff,0 3em 0 -.5em #fff,-2em 2em 0 -.5em #fff,-3em 0 0 -.5em #fff,-2em -2em 0 -.5em #fff ;
+    }
+    37.5%
+    {
+        box-shadow: 0 -3em 0 -.5em #fff,2em -2em 0 .5em #fff,3em 0 0 0 #fff,2em 2em 0 .2em #fff,0 3em 0 0 #fff,-2em 2em 0 -.5em #fff,-3em 0 0 -.5em #fff,-2em -2em 0 -.5em #fff ;
+    }
+    50%
+    {
+        box-shadow: 0 -3em 0 -.5em #fff,2em -2em 0 -.5em #fff,3em 0 0 -.5em #fff,2em 2em 0 0 #fff,0 3em 0 .2em #fff,-2em 2em 0 0 #fff,-3em 0 0 -.5em #fff,-2em -2em 0 -.5em #fff ;
+    }
+    62.5%
+    {
+        box-shadow: 0 -3em 0 -.5em #fff,2em -2em 0 -.5em #fff,3em 0 0 -.5em #fff,2em 2em 0 -.5em #fff,0 3em 0 0 #fff,-2em 2em 0 .2em #fff,-3em 0 0 0 #fff,-2em -2em 0 -.5em #fff ;
+    }
+    75%
+    {
+        box-shadow: 0 -3em 0 -.5em #fff,2em -2em 0 .5em #fff,3em 0 0 -.5em #fff,2em 2em 0 -.5em #fff,0 3em 0 -.5em #fff,-2em 2em 0 0 #fff,-3em 0 0 .2em #fff,-2em -2em 0 0 #fff ;
+    }
+    87.5%
+    {
+        box-shadow: 0 -3em 0 0 #fff,2em -2em 0 -.5em #fff,3em 0 0 -.5em #fff,2em 2em 0 -.5em #fff,0 3em 0 -.5em #fff,-2em 2em 0 0 #fff,-3em 0 0 0 #fff,-2em -2em 0 .2em #fff ;
+    }
+}
+#nicknameInput
+{
+    border: 1px solid darkturquoise;
+    padding:10px 30px;
+    margin-bottom: 20px;
+}
+.banner
+{
+    height: 80px;
+    width: 100%;
+    background: black;
+    border-radius: 5px;
+}
+.banner h1
+{
+    text-align: center;
+    color: #ffc;
+    text-shadow:0 0 .1em ,0 0 .3em;
+    padding-top: 20px;
+    margin: 0;
+}
+.banner p
+{
+    float: left;
+    display: inline-block;
+}
+#status
+{
+    color: white;
+}
+.controls
+{
+    height: 100px;
+    margin: 5px 0px;
+    position: relative;
+    border-radius: 5px;
+}
+#historyMsg
+{
+    height: 400px;
+    background-color: #fff;
+    overflow: auto;
+    padding: 2px;
+}
+#historyMsg p
+{
+    font: bold 24px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;
+    color: black;
+    text-shadow: 1px 1px rgba(255, 0, 255,0.8),2px 2px rgba(255, 0, 255,0.8),3px 3px rgba(255, 0, 248,0.8),4px 4px rgba(255, 0, 248,0.8),5px 5px rgba(197, 0, 248,0.8),6px 6px rgba(255, 0, 248,0.8);
+}
+#historyMsg img
+{
+    max-width: 99%;
+}
+.timespan
+{
+    color: #ddd;
+}
+.items
+{
+    height: 30px;
+}
+#colorStyle
+{
+    width: 50px;
+    border: none;
+    padding: 0;
+}
+
+
+.imageLable
+{
+    position: relative;
+}
+#sendImage
+{
+    position: absolute;
+    width: 52px;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+
+#messageInput
+{
+    width: 440px;
+    max-width: 440px;
+    height: 90px;
+    max-height: 90px;
+    float:left;
+}
+#sendBtn
+{
+    width: 50px;
+    height: 96px;
+    float: right;
+}
+#emojiWrapper
+{
+    display: none;
+    width: 500px;
+    bottom: 105px;
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 0 0 10px #555;
+}
+#emojiWrapper img
+{
+    margin: 2px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+}
+#emojiWrapper img:hover
+{
+    background-color: blue;
+}
+.emoji
+{
+    display: inline;
+}
+footer
+{
+    text-align: center;
+}
+#welcome-logo-wrapper
+{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    left:2%;
+}
+.logo
+{
+    margin: 0 auto;
+    height: 36px;
+    width: 200px;
+    background:url(../content/log.png) no-repeat left;
+    background-size:contain ;
+    padding-left: 50px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #fff, 0 0 70px #fff;
+    line-height: 36px;
+    color:#079aad;
+    font-size: 24px;
+    font-weight: 400;
+}
+footer
+{
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.6;
+}
+
+
+#musicplayer{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+}
+#musicplayer button{
+    position:absolute;
+    right:1px;
+    top:1px;
+    width:30px;
+    height:30px;
+    border:0;
+}
+#musicon{
+    background:url(../content/musicon.png);
+    background-size:cover;
+}
+#musicoff{
+    background:url(../content/musicoff.png);
+    background-size:cover;
+}
+.hidden{
+    display:none;
+}

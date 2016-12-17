@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="LiTao  PangTingting">
+    <meta name="description" content="一款基于node.js的在线聊天系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximun-scale=1.0,user-scalable=0">
+    <title>李涛与庞婷婷开发的在线聊天室</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!--更换背景-->
+    <canvas id="canvas"></canvas>
+    <div id="holder" class="normal">Drop your bitmap here</div>
+
+    <!--audio标签的使用-->
+    <div id="musicplayer">
+        <button id="musicon" class="hidden"></button>
+        <button id="musicoff"></button>
+        <audio src="content/bg.mp3" loop id="music"></audio>
+    </div>
+
+    <div class="wrapper">
+        <!--轮播图-->
+        <div id="box">
+            <ul id="list">
+                <li><a href="#"><img src="content/tingting.jpg" alt="婷姐"/></a></li>
+                <li><a href="#"><img src="content/tingting1.jpg" alt="婷姐"/></a></li>
+                <li><a href="#"><img src="content/tingting2.jpg" alt="婷姐"/></a></li>
+                <li><a href="#"><img src="content/tingting3.jpg" alt="婷姐"/></a></li>
+                <li><a href="#"><img src="content/tingting4.jpg" alt="婷姐"/></a></li>
+            </ul>
+            <ul id="num">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+
+        <!--<img class="tingting" src="content/tingting.jpg" alt="婷姐">-->
+
+        <div class="banner">
+            <h1>婷姐想和你聊天啦</h1>
+            <span id="status"></span>
+        </div>
+        <div id="historyMsg">
+        </div>
+        <div class="controls" >
+            <div class="items">
+                <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                <input id="emoji" type="button" value="emoji" title="emoji" />
+                <label for="sendImage" class="imageLable">
+                    <input type="button" value="image"  />
+                    <input id="sendImage" type="file" value="image"/>
+                </label>
+                <input id="clearBtn" type="button" value="clear" title="clear screen" />
+            </div>
+            <textarea id="messageInput" placeHolder="enter to send"></textarea>
+            <input id="sendBtn" type="button" value="SEND">
+            <div id="emojiWrapper">
+            </div>
+        </div>
+    </div>
+    <div id="loginWrapper">
+        <p id="info">正在连接服务器</p>
+        <div id="nickWrapper">
+            <h1 id="nick_h1">相逢何必曾相识</h1>
+            <p id="nick_p">婷姐的世界欢迎您的到来</p>
+            <input type="text" placeHolder="请提交你的大名" id="nicknameInput" />
+            <!--<input type="button" value="OK" id="loginBtn" />--><br>
+            <a href="#" id="loginBtn">OK</a>
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+    
+    <div id="welcome-logo-wrapper">
+        <div class="logo">
+            你好，陌生人
+        </div>
+    </div>
+    <footer>
+        <div>
+            ©版权所有  李涛   庞婷婷
+        </div>
+    </footer>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="scripts/hichat.js"></script>
+    <script src="scripts/Drop.js"></script>
+    <script src="scripts/loop.js"></script>
+</body>
+</html>
